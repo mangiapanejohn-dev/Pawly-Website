@@ -1,30 +1,25 @@
 # Pawly Website
 
-Marketing site for [Pawly](https://github.com/mangiapanejohn-dev/Pawly) — the agent companion that lives in your menu bar.
+Static landing page prototype for Pawly.
 
-## Stack
+## Preview
 
-Static site, zero build step. Just HTML / CSS / JS.
-
-## Local preview
+From the repository root:
 
 ```bash
-python3 -m http.server 8000
-# open http://localhost:8000
+python3 -m http.server 4173
 ```
 
-## Deploy
+Then open:
 
-Pushed to Vercel via the CLI. Live at https://pawly-website-beta.vercel.app
+```text
+http://localhost:4173/Website/
+```
 
-## File map
+The page references Pawly's existing pet PNG assets from `../Pawly/Resources/PetImages/`.
 
-- `index.html` — landing page
-- `styles.css` — all styles
-- `script.js` — interactivity
-- `favicon.svg` — paw icon
-- `vercel.json` — Vercel project config (`public: true`, `cleanUrls`)
+## Files
 
-## License
-
-See `LICENSE`.
+- `index.html` - landing page content and structure.
+- `styles.css` - visual system, responsive layout, and motion.
+- `script.js` - reveal animation and ticker duplication.
