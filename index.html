@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawly — 你的编程 Agent，住进你的桌面</title>
+  <meta name="description" content="Pawly 是一只 macOS 桌面宠物，实时观察你的编程 Agent（Claude、Codex、Gemini）并作出反应。" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- nav -->
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Pawly">
+      <img src="../Pawly/Resources/PetImages/pawly_default.png" alt="" class="brand-pet" />
+      <span>Pawly</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#features">功能</a>
+      <a href="#agents">支持的 Agent</a>
+      <a href="#install">安装</a>
+      <a class="btn btn-sm" href="../dist/Pawly-0.1.0.dmg" download>下载</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section class="hero" id="download">
+      <!-- decorative doodles -->
+      <svg class="doodle doodle-star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 1l4.6 12.4L37 16l-10 8 3.6 13L20 29l-10.6 8L13 24 3 16l12.4-2.6z"/></svg>
+      <svg class="doodle doodle-squiggle" viewBox="0 0 90 24" aria-hidden="true"><path d="M2 12c8-12 16 12 24 0s16-12 24 0 16 12 24 0" fill="none" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="doodle doodle-spark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v9M16 21v9M2 16h9M21 16h9" stroke-width="3" stroke-linecap="round"/></svg>
+
+      <div class="hero-copy">
+        <span class="tag tag-lilac">MACOS · 桌面宠物</span>
+        <h1 class="hero-title">你的编程 Agent，<br />住进你的 <span class="mark">桌面</span>。</h1>
+        <p class="hero-sub">
+          Pawly 实时看见 agent 在做什么——读文件、跑命令、请求授权、压缩上下文，
+          全在你眼皮底下，<em>无需切回终端</em>。
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="../dist/Pawly-0.1.0.dmg" download>下载 · macOS</a>
+          <a class="link-arrow" href="#features">看看它会做什么 <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="hero-fine">macOS 14+ &nbsp;·&nbsp; 免费 &nbsp;·&nbsp; 开源</p>
+      </div>
+
+      <div class="hero-stage">
+        <div class="spotlight" aria-hidden="true"></div>
+        <div class="speech" data-speech>正在运行 npm test</div>
+        <img src="../Pawly/Resources/PetImages/coding.png" alt="Pawly 桌面宠物" class="hero-pet" />
+      </div>
+    </section>
+
+    <!-- ticker -->
+    <div class="ticker" aria-label="实时活动示例">
+      <div class="ticker-track" data-marquee>
+        <span>正在读取 config.json</span><i>✶</i>
+        <span>正在运行 npm test</span><i>✶</i>
+        <span>正在压缩上下文</span><i>✶</i>
+        <span>等待授权…</span><i>✶</i>
+        <span>正在写入 main.swift</span><i>✶</i>
+        <span>正在搜索 TODO</span><i>✶</i>
+        <span>空闲中 · 喝咖啡</span><i>✶</i>
+      </div>
+    </div>
+
+    <!-- features -->
+    <section class="band" id="features">
+      <div class="band-head">
+        <span class="tag tag-pink">功能</span>
+        <h2 class="band-title">它替你盯着终端，<br />你只管写代码。</h2>
+      </div>
+
+      <div class="bento">
+        <article class="card card-pink card-tall reveal">
+          <span class="chip">实时</span>
+          <img loading="lazy" src="../Pawly/Resources/PetImages/coding.png" alt="Pawly 正在编程" />
+          <h3>每一步，都说人话</h3>
+          <p>不是冷冰冰的「working」，而是一句句具体的气泡：<code>正在运行 npm test</code>、<code>正在读取 config.json</code>。读、跑、搜索、抓取，看得一清二楚。</p>
+        </article>
+
+        <article class="card card-lilac reveal">
+          <span class="chip">压缩</span>
+          <img loading="lazy" src="../Pawly/Resources/PetImages/thinking.png" alt="Pawly 正在思考" />
+          <h3>上下文压缩</h3>
+          <p>agent 收拾上下文窗口时，宠物把纸塞进纸箱——那一下挤压，你看得见。</p>
+        </article>
+
+        <article class="card card-peri reveal">
+          <span class="chip">授权</span>
+          <img loading="lazy" src="../Pawly/Resources/PetImages/approval.png" alt="Pawly 请求授权" />
+          <h3>允许 / 拒绝 / 全部允许</h3>
+          <p>桌面直接弹卡片，一眼看清、一点搞定，不用切回终端。</p>
+        </article>
+
+        <article class="card card-butter card-wide reveal">
+          <span class="chip">安全</span>
+          <img loading="lazy" src="../Pawly/Resources/PetImages/warning.png" alt="Pawly 警告" />
+          <div>
+            <h3>放手让它跑，危险命令永远先问</h3>
+            <p>手动 · 智能 · 全自动三档随你切。但 <code>rm -rf</code> 这类命令，无论哪档都会先问你一句。</p>
+          </div>
+        </article>
+
+        <article class="card card-mint reveal">
+          <span class="chip">闲时</span>
+          <img loading="lazy" src="../Pawly/Resources/PetImages/coffee.png" alt="Pawly 喝咖啡" />
+          <h3>过自己的小日子</h3>
+          <p>没 agent 在跑时，它喝咖啡、散步、放松、犯困、睡着。双击它还会有反应。</p>
+        </article>
+
+        <article class="card card-pink reveal">
+          <span class="chip">可靠</span>
+          <img loading="lazy" src="../Pawly/Resources/PetImages/success.png" alt="Pawly 成功" />
+          <h3>钩子自愈</h3>
+          <p>被别的应用抢走钩子？运行时的 <code>HookGuardian</code> 一秒内还回来。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- agents -->
+    <section class="band band-cream" id="agents">
+      <div class="band-head center">
+        <span class="tag tag-peri">支持的 Agent</span>
+        <h2 class="band-title">接进你已经在用的工具。</h2>
+      </div>
+      <div class="agents">
+        <article class="trading reveal">
+          <div class="trading-top top-pink"><h3>Claude</h3><span>9 事件</span></div>
+          <ul>
+            <li>SessionStart · SessionEnd · Stop</li>
+            <li>UserPromptSubmit</li>
+            <li>PreToolUse · PostToolUse</li>
+            <li>PreCompact</li>
+            <li>Notification · PermissionRequest</li>
+          </ul>
+        </article>
+        <article class="trading reveal">
+          <div class="trading-top top-lilac"><h3>Codex</h3><span>8 事件</span></div>
+          <ul>
+            <li>SessionStart · Stop</li>
+            <li>PreToolUse · PostToolUse</li>
+            <li>PreCompact · PostCompact</li>
+            <li>UserPromptSubmit</li>
+            <li>PermissionRequest</li>
+          </ul>
+        </article>
+        <article class="trading reveal">
+          <div class="trading-top top-peri"><h3>Gemini</h3><span>6 事件</span></div>
+          <ul>
+            <li>SessionStart · SessionEnd</li>
+            <li>BeforeAgent · AfterAgent</li>
+            <li>BeforeTool</li>
+            <li>Notification</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- install -->
+    <section class="band" id="install">
+      <div class="band-head center">
+        <span class="tag tag-butter">安装</span>
+        <h2 class="band-title">三条命令，<br />桌面就多一只宠物。</h2>
+      </div>
+      <div class="note reveal">
+        <span class="tape" aria-hidden="true"></span>
+        <pre class="note-body"><code><span class="c"># 需要 macOS 14+、Xcode 15+、XcodeGen</span>
+xcodegen generate
+xcodebuild -project Pawly.xcodeproj -scheme Pawly \
+  -configuration Debug -derivedDataPath build build
+open build/Build/Products/Debug/Pawly.app
+
+<span class="c"># 把钩子接进 Claude / Codex / Gemini</span>
+Pawly.app/Contents/MacOS/Pawly --install-hooks</code></pre>
+      </div>
+      <p class="callout reveal">
+        <span class="callout-mark">提示</span>
+        <strong>Vibe Island 用户：</strong>安装前先退出 Vibe Island——它会在移除约 1 秒后重新写回自己的钩子，两个应用会打架。
+      </p>
+    </section>
+
+    <!-- final cta -->
+    <section class="final reveal">
+      <svg class="doodle doodle-spark final-spark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v9M16 21v9M2 16h9M21 16h9" stroke-width="3" stroke-linecap="round"/></svg>
+      <h2>把它放上桌面。</h2>
+      <p>让你的编程 agent，从此有张脸。</p>
+      <a class="btn btn-primary btn-lg" href="../dist/Pawly-0.1.0.dmg" download>下载 · macOS</a>
+      <p class="hero-fine">macOS 14+ &nbsp;·&nbsp; 免费 &nbsp;·&nbsp; 开源</p>
+      <img src="../Pawly/Resources/PetImages/wave.png" alt="" class="final-pet" onerror="this.src='../Pawly/Resources/PetImages/happy.png'" />
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="../Pawly/Resources/PetImages/idle.png" alt="" class="brand-pet" />
+      <span>Pawly</span>
+    </div>
+    <p class="footer-tag">一只守望你编程 Agent、并作出反应的桌面宠物。</p>
+    <p class="fine">macOS 14+ · Swift 5 · 用 ♥ 做的</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
