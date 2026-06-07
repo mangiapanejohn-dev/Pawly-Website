@@ -182,6 +182,14 @@ open build/Build/Products/Debug/Pawly.app
 Pawly.app/Contents/MacOS/Pawly --install-hooks</code></pre>
       </div>
       <p class="callout reveal">
+        <span class="callout-mark">首次打开</span>
+        <strong>提示「Pawly.app 已损坏」？</strong>这只是 macOS 对未签名应用的拦截，文件没坏。把 Pawly 拖进「应用程序」后，在终端运行下面这行去掉隔离标记，之后双击即可正常打开：
+      </p>
+      <div class="note reveal">
+        <span class="tape" aria-hidden="true"></span>
+        <pre class="note-body"><code>xattr -dr com.apple.quarantine /Applications/Pawly.app</code></pre>
+      </div>
+      <p class="callout reveal">
         <span class="callout-mark">提示</span>
         <strong>Vibe Island 用户：</strong>安装前先退出 Vibe Island——它会在移除约 1 秒后重新写回自己的钩子，两个应用会打架。
       </p>
